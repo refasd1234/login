@@ -1,20 +1,17 @@
 CREATE TABLE `tblmember` (
-	`id` VARCHAR(20) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
-	`pwd` VARCHAR(256) NULL DEFAULT NULL COLLATE 'utf8mb4_0900_ai_ci',
-	`NAME` VARCHAR(20) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
-	`gender` VARCHAR(1) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
-	`email` VARCHAR(20) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
+	`id` VARCHAR(20) NOT NULL ,
+	`pwd` VARCHAR(256) NULL DEFAULT NULL,
+	`NAME` VARCHAR(20) NOT NULL,
+	`gender` VARCHAR(1) NOT NULL,
+	`email` VARCHAR(20) NOT NULL,
 	`birthday` DATE NOT NULL,
-	`zipcode` VARCHAR(5) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
-	`address` VARCHAR(50) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
-	`hobby` VARCHAR(5) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
-	`NAT` VARCHAR(50) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
-	`jobcode` CHAR(1) NULL DEFAULT '0' COLLATE 'utf8mb4_0900_ai_ci',
-	`addressd` VARCHAR(25) NOT NULL COLLATE 'utf8mb4_0900_ai_ci',
+	`zipcode` VARCHAR(5) NOT NULL,
+	`address` VARCHAR(50) NOT NULL,
+	`hobby` VARCHAR(5) NOT NULL,
+	`NAT` VARCHAR(50) NOT NULL,
+	`jobcode` CHAR(1) NULL DEFAULT '0',
+	`addressd` VARCHAR(25) NOT NULL,
 	PRIMARY KEY (`id`) USING BTREE,
 	INDEX `FK_tblmember_tbljob` (`jobcode`) USING BTREE,
 	CONSTRAINT `FK_tblmember_tbljob` FOREIGN KEY (`jobcode`) REFERENCES `tbljob` (`jobcode`) ON UPDATE NO ACTION ON DELETE NO ACTION
-)
-COLLATE='utf8mb4_0900_ai_ci'
-ENGINE=InnoDB
-;
+);
